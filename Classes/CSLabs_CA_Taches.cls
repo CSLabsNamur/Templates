@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 
-\ProvidesClass{CSLabs_Header}[2019/03/18  V1.0 CSLabs_Header]
+\ProvidesClass{CSLabs_CA_Taches}[2019/03/18  V1.0 CSLabs_CA_Taches]
 
 % classe de base
 
@@ -39,3 +39,36 @@
 }
 \renewcommand{\headrulewidth}{0pt}
 \setlength{\headheight}{110pt}
+
+\newcommand{\thetitle}{
+	\hrule
+	\vspace{8pt}
+	\begin{center}
+		\textbf{\Huge{Conseil d'administration}}\\
+		\vspace{10pt}
+		\large{Liste des tâches}\\
+		\vspace{10pt}
+		\@date
+	\end{center}
+	\vspace{10pt}
+	\hrule
+	\vspace{20pt}
+}
+
+\newcommand{\task}[3]{
+	\noindent \begin{minipage}{\linewidth}
+		\textbf{Titre : #1} \\
+		\textbf{Responsable(s) : #2}
+		
+		\vspace{0.2cm}
+		
+		\noindent #3
+		
+		\vspace{1cm}
+	\end{minipage}
+}
+
+\newcommand{\signature}{
+	\flushright
+	\textbf{Signature du président:}
+}

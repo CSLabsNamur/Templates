@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 
-\ProvidesClass{CSLabs_Header}[2019/03/18  V1.0 CSLabs_Header]
+\ProvidesClass{CSLabs_CA_Decisions}[2019/03/18  V1.0 CSLabs_CA_Decisions]
 
 % classe de base
 
@@ -16,6 +16,7 @@
 \RequirePackage{pdfinlimg}
 \RequirePackage[top=2cm, bottom=2cm]{geometry}
 \RequirePackage{fancyhdr}
+\RequirePackage{lastpage}
 
 % define the style of the header and footer
 
@@ -37,5 +38,42 @@
 		\end{minipage}
 	}
 }
+\fancyfoot[C]{Page \thepage $\,$sur \pageref{LastPage}}
 \renewcommand{\headrulewidth}{0pt}
 \setlength{\headheight}{110pt}
+
+\newcounter{yearDec}
+\setcounter{yearDec}{19}
+\newcounter{dec}
+\setcounter{dec}{0}
+
+\newcommand{\thetitle}{
+	\hrule
+	\vspace{8pt}
+	\begin{center}
+		\textbf{\Huge{Conseil d'administration}}\\
+		\vspace{10pt}
+		\large{Liste des décisions}\\
+		\vspace{10pt}
+		\@date
+	\end{center}
+	\vspace{10pt}
+	\hrule
+	\vspace{20pt}
+}
+
+\newcommand{\decision}[2]{
+	\noindent \begin{tabular}{p{0.1\linewidth}p{0.85\linewidth}}
+		\textbf{\theyearDec} \textbf{- \thedec} & \textbf{#1} \\
+		& #2 \\
+	\end{tabular}
+	
+	\vspace{0.5cm}
+	
+	\addtocounter{dec}{1}
+}
+
+\newcommand{\signature}{
+	\flushright
+	\textbf{Signature du président:}
+}
