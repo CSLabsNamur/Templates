@@ -11,7 +11,7 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{lmodern}
-\RequirePackage[francais]{babel}
+\RequirePackage[french]{babel}
 \RequirePackage{graphicx}
 \RequirePackage{fancyhdr}
 \RequirePackage{lastpage}
