@@ -3,9 +3,13 @@
 #### Liste des classes Latex
 
 - Assemblée Générale :
+    - **CSLabs_Candidatures_AB** : Liste des candidats de l'Advisory Board
     - **CSLabs_AG_ODJ** : Ordre du jour
+    - **CSLabs_AG_Procuration** : Procuration pour l'AG
     - **CSLabs_AG_PV** : Procès verbal
-- Conseil d'Administration :
+
+- Conseil d'Administration : 
+    - **CSLabs_CA_Decisions** : Liste des décisions prises en CA
     - **CSLabs_CA_ODJ** : Ordre du jour
     - **CSLabs_CA_PV** : Procès verbal
 - Autres :
