@@ -1,0 +1,81 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage [francais]{babel}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{calc}
+\usepackage{multido}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\makeatletter
+\def\maketitle{
+	\begin{titlepage}
+		\centering
+		\includegraphics[width=0.7\textwidth]{logo.png}
+		\vfill
+		\setlength{\fboxsep}{5mm}
+		\framebox[\textwidth]{
+			\parbox{0.8\textwidth}{
+				\centering
+				{\LARGE \@title} \\
+				\vspace{0.5cm}
+				{\Large \@subtitle} \\
+				\vspace{1cm}
+				{\Large \@date}	
+			}
+		}
+		\vfill
+		\textbf{Computer Science Labs (CSLabs)} \\
+		Rue Grandgagnage 21, B-5000 Namur
+	\end{titlepage}
+}
+\def\subtitle#1{\def\@subtitle{#1}}
+\makeatother
+
+\title{Objectifs et priorisation}
+\subtitle{} % Nom du département
+\date{} % Année effective (ex : 2021 - 2022)
+
+\newcounter{priority}
+\newcommand{\priority}[1]{
+	\setcounter{priority}{4-#1}
+	\multido{}{#1}{$\blacksquare$ }
+	\multido{}{\value{priority}}{$\square$ }
+}
+
+\newcommand\prior[4]{
+	\noindent
+	\textbf{#1} \hfill \priority{#2}
+	\addcontentsline{toc}{subsection}{#1}
+	
+	\noindent
+	\textit{Date d'échéance : \hfill #3}
+	
+	\noindent
+	#4
+}
+
+\pagestyle{fancy}
+\fancyhead[L]{\priority{0} \hspace{0.5cm} Facultatif \hfill Obligatoire \hspace{0.5cm} \priority{4}}
+\fancyhead[R]{}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+	\maketitle
+	\newpage
+	
+	\section*{} % Catégorie des objectifs
+	\subsection*{} % Facultatif si besoin de plus de précisions
+	
+	% Format : 
+	% Titre
+	% Priorité (min 1, max 4)
+	% Date butoire
+	% Description
+	\prior{}{}{}{}
+
+\end{document}
